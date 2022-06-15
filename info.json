@@ -1,0 +1,9 @@
+{
+  "name":"heat-pipe-thermometer",
+  "version":"0.0.1",
+  "title":"heat pipe thermometer",
+  "author":"clever",
+  "factorio_version":"1.1",
+  "dependencies":["base >= 1.1"],
+  "description":"allows circuit networks to read the temp of a heat pipe"
+}
