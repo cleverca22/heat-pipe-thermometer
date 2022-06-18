@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+    branches:
+      - ci-test
+      - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: ./build.sh
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: mod-zip
+          path: out/heat-pipe-thermometer-*.zip
