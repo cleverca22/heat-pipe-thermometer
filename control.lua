@@ -25,7 +25,13 @@ script.on_event(defines.events.on_robot_built_entity, on_ent_create)
 script.on_event(defines.events.on_built_entity, on_ent_create)
 
 script.on_event(defines.events.on_entity_cloned, function (event)
-  -- TODO
+  local ent = event.destination
+  if ent.name == "heat-pipe-thermometer" then
+    log(game.table_to_json(event))
+    log(ent.position)
+    global.temp_sensors = global.temp_sensors or {}
+    find_and_bind_heatpipe(ent)
+  end
 end
 )
 
