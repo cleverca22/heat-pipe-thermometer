@@ -5,7 +5,7 @@ function find_and_bind_heatpipe(entity)
   local south = { x=entity.position.x, y = entity.position.y + 1 }
   local surface = entity.surface
   --local results = surface.find_entities({{pos.x - 1, pos.y - 1},{pos.x + 1, pos.y + 1}})
-  local results = surface.find_entities_filtered{ area = {{pos.x - 1, pos.y - 1},{pos.x + 1, pos.y + 1}}, name = "heat-pipe", limit=1 }
+  local results = surface.find_entities_filtered{ area = {{pos.x - 1, pos.y - 1},{pos.x + 1, pos.y + 1}}, type = "heat-pipe", limit=1 }
   if #results > 0 then
     global.temp_sensors[entity.unit_number].heatpipe = results[1]
   end
